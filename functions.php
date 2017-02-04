@@ -227,3 +227,42 @@ function cupss_tutorial_post_type() {
 
 }
  add_action( 'init', 'cupss_tutorial_post_type', 0 );
+
+ // Register Custom Taxonomy
+function cupps_add_branches() {
+
+	$labels = array(
+		'name'                       => 'Branches',
+		'singular_name'              => 'Branch',
+		'menu_name'                  => 'Branch',
+		'all_items'                  => 'All Branches',
+		'parent_item'                => 'Parent Branch',
+		'parent_item_colon'          => 'Parent Branch:',
+		'new_item_name'              => 'New Branch Name',
+		'add_new_item'               => 'Add New Branch',
+		'edit_item'                  => 'EditBranch',
+		'update_item'                => 'Update Branch',
+		'view_item'                  => 'View Branch',
+		'separate_items_with_commas' => 'Separate items with commas',
+		'add_or_remove_items'        => 'Add or remove branch',
+		'choose_from_most_used'      => 'Choose from the most used',
+		'popular_items'              => 'Popular Branches',
+		'search_items'               => 'Search Branches',
+		'not_found'                  => 'Not Found',
+		'no_terms'                   => 'No branch',
+		'items_list'                 => 'Branches list',
+		'items_list_navigation'      => 'Branches list navigation',
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'branch', array( 'tutorial' ), $args );
+
+}
+add_action( 'init', 'cupps_add_branches', 0 );
