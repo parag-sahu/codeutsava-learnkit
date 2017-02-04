@@ -1,6 +1,6 @@
 <?php 
     get_header();
-    $args = array( 'post_type' => 'restaurant', 'page_id'=> get_the_ID());
+    $args = array( 'post_type' => 'tutorial', 'page_id'=> get_the_ID());
     $loop = new WP_Query( $args );
     if($loop->have_posts()):
         while($loop->have_posts()):$loop->the_post();

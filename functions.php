@@ -240,10 +240,10 @@ function cupps_add_branches() {
 		'parent_item_colon'          => 'Parent Branch:',
 		'new_item_name'              => 'New Branch Name',
 		'add_new_item'               => 'Add New Branch',
-		'edit_item'                  => 'EditBranch',
+		'edit_item'                  => 'Edit Branch',
 		'update_item'                => 'Update Branch',
 		'view_item'                  => 'View Branch',
-		'separate_items_with_commas' => 'Separate items with commas',
+		'separate_items_with_commas' => 'Separate branches with commas',
 		'add_or_remove_items'        => 'Add or remove branch',
 		'choose_from_most_used'      => 'Choose from the most used',
 		'popular_items'              => 'Popular Branches',
@@ -265,4 +265,41 @@ function cupps_add_branches() {
 	register_taxonomy( 'branch', array( 'tutorial' ), $args );
 
 }
-add_action( 'init', 'cupps_add_branches', 0 );
+add_action( 'init', 'cupps_add_branches', 0 ); // Register Custom Taxonomy
+function cupps_add_subjects() {
+
+	$labels = array(
+		'name'                       => 'Subjects',
+		'singular_name'              => 'Subject',
+		'menu_name'                  => 'Subject',
+		'all_items'                  => 'All Subjects',
+		'parent_item'                => 'Parent Subject',
+		'parent_item_colon'          => 'Parent Subject:',
+		'new_item_name'              => 'New Subject Name',
+		'add_new_item'               => 'Add New Subject',
+		'edit_item'                  => 'Edit Subject',
+		'update_item'                => 'Update Subject',
+		'view_item'                  => 'View Subject',
+		'separate_items_with_commas' => 'Separate subject with commas',
+		'add_or_remove_items'        => 'Add or remove subject',
+		'choose_from_most_used'      => 'Choose from the most used',
+		'popular_items'              => 'Popular Subjects',
+		'search_items'               => 'Search subjects',
+		'not_found'                  => 'Not Found',
+		'no_terms'                   => 'No subject',
+		'items_list'                 => 'Subjects list',
+		'items_list_navigation'      => 'Subjects list navigation',
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'subject', array( 'tutorial' ), $args );
+
+}
+add_action( 'init', 'cupps_add_subjects', 0 );
