@@ -28,17 +28,21 @@ h1, h2{
 }
 
 #c-main {
-    max-width:1200px;
+    max-width:80%;
     margin: 0 auto;
     margin-top: 100px;
+    min-height: 85%;
+}
+#c-main img{
+  max-width: 100%;
+  height: auto;
 }
 
 #c-main article{
     padding: 10px;
 }
 #c-main article p{
-    max-width:520px;
-    text-align: center;
+   
     line-height: 1.5;
     margin: 0 auto;
 }
@@ -84,12 +88,25 @@ h1, h2{
   color:#fff;
   height: 100%;
   padding: 10px;
+   font-family: roboto;
   display: block;
 }
-.current-menu-item{
-  background-color: #62BB46;
-
+.current-menu-item a{
+  background-color: #91F969;
+  color: black;
 }
+.cupss-menu li a:hover{
+  background-color: #91F969;
+ color: black;  
+}
+
+.search #c-main a h2{
+  color: #62BB46;
+  padding: 20px;
+  font-size: 28px;
+  text-align: center;
+}
+
 
 #c-footer{
   padding: 20px;
@@ -112,7 +129,7 @@ h1, h2{
 .hamburger {
   position: absolute;top:0;
   right: 0;
-  padding: 15px;
+  padding: 20px;
  
   cursor: pointer;
   transition-property: opacity, filter;
