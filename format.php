@@ -3,6 +3,9 @@
     <?php do_action( 'ps_post_header' ) ?>
     </header>
         <?php
+        if ( has_post_thumbnail() ) {
+	the_post_thumbnail();
+} 
         if(is_single()||is_page()):
             the_content();
         else:
